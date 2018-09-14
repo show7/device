@@ -26,13 +26,13 @@ const router = new Router({
     }
   ]
 })
-router.beforeEach((to, from, next) => {
-  if (to.name == "SignIn") return next()
-  if (storage.get("state")) {
-    return next()
-  } else {
-    return next("/sign_in")
-  }
-})
+// router.beforeEach((to, from, next) => {
+//   if (to.name == "SignIn") return next()
+//   if (storage.get("state")) {
+//     return next()
+//   } else {
+//     return next("/sign_in")
+//   }
+// })
 
 export default router
