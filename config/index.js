@@ -11,14 +11,11 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      '/v2': {
-          target: 'https://mini.chatail.com/admin',
-          // target: 'https://prodmini.chatail.com/admin',
-          // target: 'fe9tff.natappfree.cc',
-          // target: '172.16.22.234:9000',
+      '/JX': {
+          target: 'http://www.qunlss.com',
           changeOrigin: true,
           pathRewrite: {
-              '^/v2': '/v2'
+              '^/JX': '/JX'
           }
       }
   },

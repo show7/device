@@ -1,7 +1,7 @@
 import Vue from "vue"
 
 const components = {
-  SideNavigationBar: () => import("./SideNavigationBar"),
+  TopNavigationBar: () => import("./TopNavigationBar"),
   NavigationHeadBack: () => import("./NavigationHeadBack"),
   TopToolBar: () => import("./TopToolBar"),
   PageInation: () => import("./PageInation")

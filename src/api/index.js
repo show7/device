@@ -7,10 +7,8 @@ import { Message } from "element-ui"
 
 Vue.use(VueAxios, axios)
 
-axios.defaults.baseURL = "/v2" // 本地
-// axios.defaults.baseURL = 'https://mini.chatail.com/admin/v1' // 开发
-// axios.defaults.baseURL = 'https://test.chatail.com/admin/v1'    //测试
-// axios.defaults.baseURL =  'https://prodmini.chatail.com/admin/v1' //生产
+axios.defaults.baseURL = "/JX" // 本地
+// axios.defaults.baseURL = 'http://www.qunlss.com/JX' // 开发
 
 Vue.axios.interceptors.response.use(response => {
   if (response.data.code !== "10001") {

@@ -1,157 +1,67 @@
 <template>
-  <el-row class="home" type="flex" justify='center'>
-        <!-- 头部 -->
-    <el-col  class="header">
-      <div  class="logo" > 洽淘-{{role_type}} </div>
-      <div  class="userinfo">
-
-      </div>
-    </el-col>
-    <router-view></router-view>
-  </el-row>
+  <div class="main">
+    <div>
+      <top-navigation-bar @isShow="isShowCard" />
+    </div>
+    <div @click="isShow = false"></div>
+    <div v-show="isShow" class="fix_usr_info">
+      <div class="user_img"><img src="" alt=""></div>
+      <div class="name">孙悟空</div>
+      <div class="name">销售</div>
+      <div class="updatePwd">修改密码</div>
+    </div>
+  </div>
 </template>
 
 <script>
 // import { Message } from 'element-ui'
 
 export default {
-  name: "Main"
+  name: "Main",
+  data () {
+    return {
+      isShow: false
+    }
+  },
+  methods: {
+    isShowCard (val) {
+      this.isShow = val
+    }
+  }
 }
 </script>
 
 <style lang="less" scoped>
-.home {
-  position: absolute;
-  top: 0px;
-  bottom: 0px;
-  right: 0;
-  width: 98%;
-  .header {
-    height: 60px;
-    // line-height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #fff;
-    .userinfo {
-      text-align: right;
-      padding-right: 35px;
-      float: right;
-      display: flex;
-      align-items: center;
-      justify-content: right;
-      .search {
-        box-shadow: 0 0 6px #1b3ded !important;
-        overflow: hidden !important;
-        border-radius: 4px;
-        width: 200px;
-      }
-      .userinfo-inner {
-        cursor: pointer;
-        color: #fff;
-        img {
-          width: 40px;
-          height: 40px;
-          border-radius: 20px;
-          margin: 10px 0px 10px 10px;
-          float: right;
+  .fix_usr_info {
+        width:261px;
+        height:280px;
+        background:rgba(47,49,62,1);
+        box-shadow:0px 2px 8px 0px rgba(0,0,0,0.06),0px -2px 8px 0px rgba(0,0,0,0.06);
+        border-radius:4px;
+        position: fixed;
+        top: 80px;
+        right: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .user_img {
+          width: 80px;
+          height: 80px;
+          margin-top: 30px;
+          background: red;
+          margin: 0 auto;
         }
-      }
-    }
-    .logo {
-      //width:230px;
-      font-size: 22px;
-      color: #1b3ded;
-      img {
-        width: 40px;
-        float: left;
-        margin: 10px 10px 10px 18px;
-      }
-      .txt {
-        color: #fff;
-      }
-    }
-    .logo-width {
-      width: 230px;
-    }
-    .logo-collapse-width {
-      width: 60px;
-    }
-    .tools {
-      padding: 0px 23px;
-      width: 14px;
-      height: 60px;
-      line-height: 60px;
-      cursor: pointer;
-    }
+        .name {
+          font-size:14px;
+          color:rgba(255,255,255,1);
+          margin-top: 10px;
+          text-align: center;
+        }
+        .updatePwd {
+          font-size:14px;
+          color:rgba(32,185,255,1);
+          text-align: center;
+          margin-top: 30px;
+        }
   }
-  .main {
-    display: flex;
-    // background: #324057;
-    position: absolute;
-    top: 60px;
-    bottom: 0px;
-    overflow: hidden;
-    box-shadow: 1px 1px 10px #e7e9f4;
-    border-radius: 10px;
-    aside {
-      flex: 0 0 230px;
-      width: 230px;
-      // position: absolute;
-      // top: 0px;
-      // bottom: 0px;
-      .el-menu {
-        height: 100%;
-      }
-      .collapsed {
-        width: 60px;
-        .item {
-          position: relative;
-        }
-        .submenu {
-          position: absolute;
-          top: 0px;
-          left: 60px;
-          z-index: 99999;
-          height: auto;
-          display: none;
-        }
-      }
-    }
-    .menu-collapsed {
-      flex: 0 0 60px;
-      width: 60px;
-    }
-    .menu-expanded {
-      flex: 0 0 230px;
-      width: 230px;
-    }
-    .content-container {
-      // background: #f1f2f7;
-      flex: 1;
-      position: absolute;
-      right: 0px;
-      top: 0px;
-      bottom: 0px;
-      left: 160px;
-      overflow-y: scroll;
-      // padding: 20px;
-      .breadcrumb-container {
-        //margin-bottom: 15px;
-        .title {
-          width: 200px;
-          float: left;
-          color: #475669;
-        }
-        .breadcrumb-inner {
-          float: right;
-        }
-      }
-      .content-wrapper {
-        background-color: #fff;
-        box-sizing: border-box;
-      }
-    }
-  }
-}
 </style>

@@ -1,0 +1,124 @@
+<template>
+  <div class="header" >
+    <div class="header_content">
+      <div class="header_log_path">
+        <div class="logo"><img src="" alt=""></div>
+        <div class="router_box">
+          <div :class="index == isRouter ? 'isRouter' : ''" @click="navigateTo(index)" v-for="(item,index) in navigation" :key="index">{{item.name}}</div>
+        </div>
+      </div>
+      <div class="user_info"  @click="isShowUsers">
+        <span class="el-icon-setting"></span>
+        <div>
+          <img src="" alt="">
+          <div>孙悟空</div>
+          <span class="el-icon-arrow-down"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+/**
+ * 左侧导航栏
+ */
+
+export default {
+  name: "top-navigation-bar",
+  data () {
+    return {
+      isRouter: 0,
+      isShowUser: false,
+      navigation: [
+        {
+          name: "市场活动",
+          path: "market_activity"
+        },
+        {
+          name: "商机",
+          path: "trade_opportunity"
+        },
+        {
+          name: "订单",
+          path: "orders"
+        },
+        {
+          name: "报表",
+          path: "report_form"
+        },
+        {
+          name: "员工",
+          path: "staff"
+        }
+      ]
+    }
+  },
+  methods: {
+    navigateTo (i) {
+      this.isRouter = i
+      // this.$router.push(this.navigation[i].path)
+    },
+    isShowUsers () {
+      this.isShowUser = !this.isShowUser
+      this.$emit("isShow", this.isShowUser)
+    }
+  }
+}
+</script>
+<style lang="less" scoped>
+  .header {
+    width: 100%;
+    height: 60px;
+    background: #2F313E;
+    .header_content {
+      padding: 0 30px;
+      color:rgba(221,221,221,1);
+      display:flex;
+      height: 100%;
+      align-items: center;
+      justify-content: space-between;
+      .header_log_path {
+        display: flex;
+        .logo {
+          width:193px;
+          height:47px;
+          font-size:36px;
+          font-family:MicrosoftYaHei;
+          color:rgba(32,185,255,1);
+          line-height:47px;
+          img {
+            width:100%;
+            height:100%;
+          }
+        }
+        .router_box {
+          display: flex;
+          div {
+            width:180px;
+            height:60px;
+            line-height: 60px;
+            display: flex;
+            justify-content: center;
+          }
+          .isRouter {
+            width:180px;
+            height:60px;
+            background:rgba(32,185,255,1) !important;
+            color:rgba(255,255,255,1) !important;
+          }
+        }
+      }
+      .user_info {
+        display: flex;
+        align-items: center;
+        div {
+          display: flex;
+        }
+        .el-icon-setting {
+          margin-right: 44px;
+        }
+      }
+    }
+  }
+</style>
