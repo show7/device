@@ -2,13 +2,18 @@
 
 #### 项目介绍
 
-  权限后台 <br/>
-    登录返回 EmployeeCategoryCode 字段 <br/>
-      1 经销商员工 <br/>
-      2 主机厂员工 <br/>
-    在Main里 <br/>
-      Improtant 主机厂目录
+  权限后台 
+  
+    登录返回 EmployeeCategoryCode 字段 
+    
+      1 经销商员工 
       
+      2 主机厂员工 
+      
+    在Main里 
+    
+      Improtant 主机厂目录
+
       Ordinary  市场目录
 #### 软件架构
 基于vue+element 后台管理
