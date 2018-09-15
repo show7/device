@@ -1,4 +1,4 @@
-module.exports = [
+const router = [
   {
     path: "/createdMarketAct",
     name: "created_marketAct",
@@ -48,3 +48,6 @@ module.exports = [
     meta: {role_type: 3}
   }
 ]
+// .filter(item => )
+
+module.exports = router
