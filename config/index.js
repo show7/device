@@ -12,7 +12,8 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/JX': {
-          target: 'http://www.qunlss.com',
+          target: 'https://www.qunlss.com',
+          secure: false,
           changeOrigin: true,
           pathRewrite: {
               '^/JX': '/JX'
@@ -21,8 +22,8 @@ module.exports = {
   },
 
     // Various Dev Server settings
-    host: 'localhost', // can be overwritten by process.env.HOST
-    port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
+    host: '127.0.0.1', // can be overwritten by process.env.HOST
+    port: 8060, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     autoOpenBrowser: false,
     errorOverlay: true,
     notifyOnErrors: true,

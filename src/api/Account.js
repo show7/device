@@ -2,11 +2,11 @@ import Vue from "vue"
 
 const urlDict = {
   // 登录
-  login: "/admin/login"
+  login: "/CustomerServices.svc/AppUserLogin"
 }
 
 export default {
-  login (data) {
-    return Vue.axios.post(urlDict.login, data)
+  login (MobilePhone, Password) {
+    return Vue.axios.post(urlDict.login, {MobilePhone, Password})
   }
 }
