@@ -69,10 +69,10 @@ export default {
 <style lang="less" scoped>
   .header {
     width: 100%;
-    height: 60px;
+    height: .6rem;
     background: #2F313E;
     .header_content {
-      padding: 0 30px;
+      padding: 0 .3rem;
       color:rgba(221,221,221,1);
       display:flex;
       height: 100%;
@@ -81,12 +81,12 @@ export default {
       .header_log_path {
         display: flex;
         .logo {
-          width:193px;
-          height:47px;
-          font-size:36px;
+          width:1.93rem;
+          height:.47rem;
+          font-size:.36rem;
           font-family:MicrosoftYaHei;
           color:rgba(32,185,255,1);
-          line-height:47px;
+          line-height:.47rem;
           img {
             width:100%;
             height:100%;
@@ -95,15 +95,15 @@ export default {
         .router_box {
           display: flex;
           div {
-            width:180px;
-            height:60px;
-            line-height: 60px;
+            width:1.8rem;
+            height:.6rem;
+            line-height: .6rem;
             display: flex;
             justify-content: center;
           }
           .isRouter {
-            width:180px;
-            height:60px;
+            width:1.8rem;
+            height:.6rem;
             background:rgba(32,185,255,1) !important;
             color:rgba(255,255,255,1) !important;
           }
@@ -116,7 +116,7 @@ export default {
           display: flex;
         }
         .el-icon-setting {
-          margin-right: 44px;
+          margin-right: .44rem;
         }
       }
     }

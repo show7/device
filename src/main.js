@@ -7,6 +7,7 @@ import store from "./store"
 import "@/plugins"
 import "@/components"
 import "@/assets/styles/index.less"
+import "@/assets/js/rem.js"
 
 Vue.config.productionTip = false
 

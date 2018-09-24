@@ -2,7 +2,7 @@ import Vue from "vue"
 
 const urlDict = {
   // 登录
-  login: "/CustomerServices.svc/AppUserLogin"
+  login: "/CustomerServices.svc/PCUserLogin"
 }
 
 export default {

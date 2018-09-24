@@ -31,7 +31,6 @@ export default {
   name: "page-ination",
   props: {
     total: {
-
       default: 100
     }
   },
@@ -130,8 +129,8 @@ export default {
 </script>
 <style scoped>
 .page_box {
-  margin-top: 30px;
-  margin-bottom: 200px;
+  margin-top: .3rem;
+  margin-bottom: 2rem;
 }
 .page_conter {
   display: flex;
@@ -139,23 +138,23 @@ export default {
   align-items: center;
 }
 .page_conter > div {
-  margin-left: 10px;
+  margin-left: .1rem;
 }
 .pageSize {
   display: flex;
   align-items: center;
 }
 .pageSize > div:nth-child(1) {
-  margin-right: 10px;
+  margin-right: .1rem;
 }
 .select {
-  width: 80px;
-  height: 30px;
-  border-radius: 5px;
+  width: .8rem;
+  height: .3rem;
+  border-radius: .05rem;
   position: relative;
   box-shadow: 0 0 5px #ccc;
   text-align: center;
-  line-height: 30px;
+  line-height: .3rem;
 }
 .select > div {
   position: absolute;
@@ -163,7 +162,7 @@ export default {
   border: 1px solid #ccc;
   border-bottom: none;
   border-top: none;
-  top: 35px;
+  top: .35rem;
   background: white;
   height: 0;
   overflow: hidden;
@@ -175,7 +174,7 @@ export default {
 }
 
 .selectShow {
-  height: 124px !important;
+  height: 1.24rem !important;
   transition: height 0.2s;
 }
 .selectClose {
@@ -184,17 +183,17 @@ export default {
 }
 .pageIndex_box {
   display: flex;
-  margin-right: 10px;
+  margin-right: .1rem;
 }
 .pageIndex_box > div {
-  margin-left: 20px;
+  margin-left: .2rem;
 }
 .pageIndex {
   display: flex;
 }
 
 .pageIndex > div {
-  margin-left: 15px;
+  margin-left: .15rem;
 }
 .isBlue {
   color: #1b3ded;

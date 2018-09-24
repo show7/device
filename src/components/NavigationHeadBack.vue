@@ -36,10 +36,10 @@ export default {
 }
 .nav_conter {
   display: flex;
-  padding: 10px 0;
+  padding: .1rem 0;
 }
 .nav_conter > div {
-  padding: 0 20px;
+  padding: 0 .2rem;
   border-left: 1px solid rgba(111, 111, 111, 0.32);
 }
 .nav_conter > div:nth-child(1) {

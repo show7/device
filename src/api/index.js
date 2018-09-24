@@ -2,7 +2,7 @@ import Vue from "vue"
 import axios from "axios"
 import VueAxios from "vue-axios"
 // import router from "@/router"
-// import store from "@/store"
+import store from "@/store"
 import { Message } from "element-ui"
 
 Vue.use(VueAxios, axios)
@@ -30,8 +30,7 @@ Vue.axios.interceptors.response.use(response => {
 
 axios.interceptors.request.use(config => {
   // 在发送请求之前做些什么
-  // if (store.state.Account.userInfo.user) config.headers["refresh-token"] = store.state.Account.userInfo.refresh_token
-  console.log(config)
+  if (store.state.Account.userInfo.AppUserId) config.headers["EmployeeId"] = store.state.Account.userInfo.AppUserId
   return config
 }, error => {
   // 对请求错误做些什么
@@ -39,3 +38,4 @@ axios.interceptors.request.use(config => {
 })
 
 export { default as Account } from "./Account"
+export { default as ImportMarket } from "./ImportMarket"

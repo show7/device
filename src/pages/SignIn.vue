@@ -80,6 +80,9 @@ export default {
       Account.login(this.MobilePhone, this.Password).then(res => {
         console.log(res)
         // if (res.data == )
+        this.$store.commit("Account/SET_USER_INFO", res)
+        // console.log(this.$router)
+        this.$router.push("marketActivity")
       })
     },
     seekPwd () {
@@ -102,13 +105,13 @@ export default {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding-top: 16px;
+      padding-top: .16rem;
       .logo {
-        width:69px;
-        height:69px;
+        width:.69rem;
+        height:.69rem;
         background:gray;
-        border-radius: 69px;
-        margin-left: 60px;
+        border-radius: .69rem;
+        margin-left: .6rem;
         img {
           width: 100%;
           height: 100%;
@@ -117,12 +120,12 @@ export default {
       .rember_pwd {
         display: flex;
         align-items: center;
-        margin-right: 30px;
+        margin-right: .3rem;
         color: white;
         .no_user_name {
           border:1px solid white;
-          margin-left: 20px;
-          padding: 5px;
+          margin-left: .2rem;
+          padding: .05rem;
         }
       }
     }
@@ -134,14 +137,14 @@ export default {
       color: white;
       text-align: center;
       h2 {
-        line-height: 50px;
+        line-height: .5rem;
       }
       .title_signin {
-        margin-top: 50px;
+        margin-top: .5rem;
       }
       .input_box {
-        width: 370px;
-        height: 50px;
+        width: 3.7rem;
+        height: .5rem;
         border-bottom: 1px solid white;
         display: flex;
         align-items: center;
@@ -152,17 +155,17 @@ export default {
           align-content: center;
           justify-content: space-between;
           input {
-            width: 370px-18px-100px;
+            width: 3.7rem-0.18rem-1rem;
           }
           .get_code {
             background: #20B9FF;
-            padding: 5px;
-            border-radius:4px;
+            padding: .05rem;
+            border-radius:.04rem;
           }
         }
         input {
           border:none;
-          margin-left: 5px;
+          margin-left: .05rem;
           background: rgba(0,0,0,0);
           color: white;
           &::-webkit-input-placeholder {
@@ -173,8 +176,8 @@ export default {
           }
         }
         img {
-          width: 18px;
-          height: 18px;
+          width: .18rem;
+          height: .18rem;
         }
       }
     }

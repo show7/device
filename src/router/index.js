@@ -17,7 +17,8 @@ const router = new Router({
       component: () => import("@/pages/Main.vue"),
       redirect: { name: "Home" },
       children: [].concat(
-        require("./Home")
+        require("./Home"),
+        require("./MarketActivity")
       )
     },
     {

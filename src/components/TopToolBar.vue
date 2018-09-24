@@ -40,15 +40,15 @@ export default {
 <style scoped>
 .timeFilter {
   display: flex;
-  font-size: 16px;
+  font-size: .16rem;
   font-family: Avenir Heavy;
-  margin: 17px 0;
+  margin: .17rem 0;
 }
 .timeFilter>.big {
-  padding: 12px 28px;
+  padding: .12rem .28rem;
 }
 .timeFilter>.small {
-    padding: 5px 15px;
+    padding: .05rem .15rem;
 }
 .isSelect {
   background: rgba(44, 150, 255, 0.28);
@@ -57,7 +57,7 @@ export default {
 }
 .border{
   border:1px solid rgba(112,112,112,0.28);
-  border-radius: 5px;
+  border-radius: .05rem;
 }
 .border>div {
   border-right: 1px solid rgba(112,112,112,0.28);
