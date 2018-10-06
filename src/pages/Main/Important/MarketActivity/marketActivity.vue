@@ -95,8 +95,5 @@ export default {
     width: 4.36rem;
   }
 }
-.table_box {
-  // margin-top:
-}
-
+.table_box {}
 </style>

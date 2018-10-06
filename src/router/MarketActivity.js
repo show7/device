@@ -26,7 +26,7 @@ const router = [
   {
     path: "/marketActivitys",
     name: "market_activitys",
-    component: () => import("@/pages/Main/Important/MarketActivity/q.vue"),
+    component: () => import("@/pages/Main/Important/MarketActivity/marketActivitys.vue"),
     meta: {role_type: 1}
   }
 ]
