@@ -95,10 +95,5 @@ export default {
     width: 4.36rem;
   }
 }
-.table_box {
-<<<<<<< HEAD
-=======
-  // margin-top:
->>>>>>> 13ca37e... api接入
-}
+.table_box {}
 </style>
