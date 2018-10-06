@@ -15,6 +15,8 @@
       Improtant 主机厂目录
 
       Ordinary  市场目录
+
+      NicheMarket 商机目录
 #### 软件架构
 基于vue+element 后台管理
 

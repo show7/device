@@ -65,7 +65,7 @@ export default {
       })
     },
     selectRow () {
-      this.$router.push('marketActInfo')
+      this.$router.push("marketActInfo")
     }
   }
 }
@@ -91,7 +91,5 @@ export default {
   }
 }
 .table_box {
-  // margin-top: 
 }
-
 </style>

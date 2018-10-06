@@ -4,6 +4,7 @@ import store from "@/store"
 Vue.use(Router)
 window.store = store
 const router = new Router({
+  mode: "history",
   routes: [
     {
       path: "/sign_in",
@@ -18,7 +19,8 @@ const router = new Router({
       redirect: { name: "Home" },
       children: [].concat(
         require("./Home"),
-        require("./MarketActivity")
+        require("./MarketActivity"),
+        require("./BusinessOpportunityList")
       )
     },
     {
