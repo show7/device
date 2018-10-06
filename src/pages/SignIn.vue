@@ -61,8 +61,8 @@ export default {
   data () {
     return {
       isLogin: true,
-      MobilePhone: "18700000004",
-      Password: "18700000004"
+      MobilePhone: "18700000001",
+      Password: "18700000001"
     }
   },
 
@@ -70,6 +70,7 @@ export default {
     operation () {
       this.isLogin ? this.login() : this.seekPwd()
     },
+
     login () {
       if (!this.MobilePhone || !this.Password) {
         return this.$message({

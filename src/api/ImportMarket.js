@@ -17,5 +17,8 @@ const urlDict = {
 export default {
   queryImMarket (DeviceBrandId, DeviceClassifyId, PageNumber) {
     return Vue.axios.post(urlDict.queryImMarket, {DeviceBrandId, DeviceClassifyId, PageNumber})
+  },
+  createdImMarket (data) {
+    return Vue.axios.post(urlDict.createdImMarket, data)
   }
 }

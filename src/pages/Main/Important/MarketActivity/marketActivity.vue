@@ -58,10 +58,15 @@ export default {
       PageNumber: 1
     }
   },
+  created () {
+    this.queryImMarket()
+  },
   methods: {
     queryImMarket () {
-      ImportMarket.queryImMarket().then(res => {
-        console.log(res)
+      let state = this.$store.state.Account.userInfo
+      console.log(state)
+      ImportMarket.queryImMarket(state.DeviceBrandId, state.DeviceClassifyId, this.PageNumber).then(res => {
+        this.tableData = res.OEMCampaignList
       })
     },
     selectRow () {
@@ -91,5 +96,9 @@ export default {
   }
 }
 .table_box {
+<<<<<<< HEAD
+=======
+  // margin-top:
+>>>>>>> 13ca37e... api接入
 }
 </style>

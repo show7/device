@@ -22,6 +22,12 @@ const router = [
     name: "market_act_result",
     component: () => import("@/pages/Main/Important/MarketActivity/marketActResult.vue"),
     meta: {role_type: 1}
+  },
+  {
+    path: "/marketActivitys",
+    name: "market_activitys",
+    component: () => import("@/pages/Main/Important/MarketActivity/q.vue"),
+    meta: {role_type: 1}
   }
 ]
 // .filter(item => )
