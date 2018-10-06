@@ -58,14 +58,19 @@ export default {
       PageNumber: 1
     }
   },
+  created () {
+    this.queryImMarket()
+  },
   methods: {
     queryImMarket () {
-      ImportMarket.queryImMarket().then(res => {
-        console.log(res)
+      let state = this.$store.state.Account.userInfo
+      console.log(state)
+      ImportMarket.queryImMarket(state.DeviceBrandId, state.DeviceClassifyId, this.PageNumber).then(res => {
+        this.tableData = res.OEMCampaignList
       })
     },
     selectRow () {
-      this.$router.push('marketActInfo')
+      this.$router.push("marketActInfo")
     }
   }
 }
@@ -91,7 +96,7 @@ export default {
   }
 }
 .table_box {
-  // margin-top: 
+  // margin-top:
 }
 
 </style>
