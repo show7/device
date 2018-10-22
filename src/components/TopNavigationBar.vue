@@ -33,11 +33,11 @@ export default {
       navigation: [
         {
           name: "市场活动",
-          path: "market_activity"
+          path: "marketActivity"
         },
         {
           name: "商机",
-          path: "trade_opportunity"
+          path: "tradeOpportunity"
         },
         {
           name: "订单",
@@ -49,7 +49,7 @@ export default {
         },
         {
           name: "员工",
-          path: "staff"
+          path: "queryStaff"
         }
       ]
     }
@@ -57,7 +57,7 @@ export default {
   methods: {
     navigateTo (i) {
       this.isRouter = i
-      // this.$router.push(this.navigation[i].path)
+      this.$router.push(this.navigation[i].path)
     },
     isShowUsers () {
       this.isShowUser = !this.isShowUser

@@ -95,5 +95,4 @@ export default {
     width: 4.36rem;
   }
 }
-.table_box {}
 </style>

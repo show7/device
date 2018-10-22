@@ -16,46 +16,60 @@
     </div>
     <div class="created_box">
       <div class="cread_conter">
-        <head-title name="主机厂信息" />
+        <head-title name="基本信息" :isShowRight="true" />
         <div class="form_box">
           <el-form :model="data" :rules="rules" ref="ruleForm"  >
             <div class="demo-ruleForm">
-              <el-form-item label="活动主题"  prop="ruleForm.CampaignName"  >
-                <el-input v-model="data.ruleForm.CampaignName" class="input"></el-input>
+              <el-form-item label="手机号"  prop="ruleForm.CampaignName"  >
+                18601784826
               </el-form-item>
-              <el-form-item label="活动时间" prop="activeTime" class="form_item" >
-                <el-date-picker v-model="data.activeTime" style="width:7.0rem" type="daterange" range-separator="至" start-placeholder="开始日期" end-placeholder="结束日期"></el-date-picker>
+              <el-form-item label="姓名"  class="form_item"  prop="ruleForm.CampaignName"  >
+                <br/>wangkai
+              </el-form-item>
+              <el-form-item label="身份证号"  class="form_item"  prop="ruleForm.CampaignName"  >
+                37821123456431
               </el-form-item>
             </div>
             <div class="demo-ruleForm">
-              <el-form-item label="活动类别" prop="ruleForm.CampaignTypeCode" >
-                <el-select v-model="data.ruleForm.CampaignTypeCode" placeholder="请选择">
-                  <el-option
-                    v-for="(item, index) in CampaignTypeCodes"
-                    :key="item"
-                    :label="item"
-                    :value="index + 1">
-                  </el-option>
-                </el-select>
+              <el-form-item label="角色"  prop="ruleForm.CampaignTypeCode" >
+                <br/>经销商
               </el-form-item>
-              <!-- <el-form-item label="主推车型" class="form_item" prop="delivery" required>
-                <el-input v-model="data.ruleForm.DeviceModelId" class="input"></el-input>
-              </el-form-item> -->
-              <el-form-item label="主机厂承担比例" class="form_item" prop="ruleForm.CostBearing" >
-                <el-input v-model="data.ruleForm.CostBearing" class="input"></el-input>
+              <el-form-item label="性别"  class="form_item" prop="ruleForm.CampaignTypeCode" >
+               <br/>男
+              </el-form-item>
+              <el-form-item label="出生日期" class="form_item" prop="ruleForm.CostBearing" >
+                <br/>1996.11.116
               </el-form-item>
             </div>
-            <head-title name="活动内容/要求" />
-            <div class="info">
-              <el-form-item label="活动内容" prop="ruleForm.Note">
-                <el-input class="textar" :rows="6" type="textarea" v-model="data.ruleForm.Note"></el-input>
+            <head-title name="职位信息" :isShowRight="true"  />
+            <div class="demo-ruleForm">
+              <el-form-item label="入行日期"  prop="ruleForm.CampaignName"  >
+                 <br/>1996.11.116
               </el-form-item>
-              <el-form-item label="活动要求"  style="margin-left: 1.40rem;" prop="ruleForm.Requirements" >
-                <el-input type="textarea" :rows="6" class="textar" v-model="data.ruleForm.Requirements"></el-input>
+              <el-form-item label="入职日期" class="form_item" prop="ruleForm.CampaignName"  >
+               <br/> 1996.11.116
               </el-form-item>
+                <el-form-item label="离职日期"  class="form_item"  prop="ruleForm.CampaignName"  >
+                1996.11.116
+              </el-form-item>
+            </div>
+            <div class="demo-ruleForm">
+              <el-form-item label="状态"  prop="ruleForm.CampaignTypeCode" >
+                <br/>在职
+              </el-form-item>
+              <el-form-item label="所属业务小组" class="form_item" prop="ruleForm.CampaignTypeCode" >
+               <br/> GYU678
+              </el-form-item>
+               <el-form-item  class="form_item" label="平台使用截止日期" prop="delivery" required>
+               <br/> 2018-09-09 23:00
+              </el-form-item>
+            </div>
+            <div class="demo-ruleForm">
+              <el-form-item label="创建日期" prop="ruleForm.CostBearing" >
+               <br/> 2018-09-09 23:00
+               </el-form-item>
             </div>
           </el-form>
-
         </div>
       </div>
     </div>
@@ -151,7 +165,7 @@ export default {
       display: flex;
       // flex-wrap: wrap;
       .form_item {
-        margin-left: 1.4rem;
+        margin-left: 6.3rem;
       }
       .input {
         width: 3.5rem;
@@ -165,6 +179,9 @@ export default {
         // height: 200px !important;
       }
     }
+  }
+  .el-form-item {
+    min-width: 1.69rem;
   }
 }
 </style>

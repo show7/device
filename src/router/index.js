@@ -20,7 +20,9 @@ const router = new Router({
       children: [].concat(
         require("./Home"),
         require("./MarketActivity"),
-        require("./BusinessOpportunityList")
+        require("./BusinessOpportunityList"),
+        require("./Staff")
+
       )
     },
     {
