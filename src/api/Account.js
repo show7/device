@@ -1,8 +1,9 @@
 import Vue from "vue"
 
+const baseUrl = "/CustomerServices.svc"
 const urlDict = {
   // 登录
-  login: "/CustomerServices.svc/PCUserLogin"
+  login: `${baseUrl}/PCUserLogin`
 }
 
 export default {

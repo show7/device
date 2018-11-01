@@ -1,16 +1,17 @@
 import Vue from "vue"
 
+const baseUrl = "/CampaignServices.svc"
 const urlDict = {
   // 查询
-  queryImMarket: "/CampaignServices.svc/GetOEMCampaignList",
+  queryImMarket: `${baseUrl}/GetOEMCampaignList`,
   // 创建
-  createdImMarket: "/CampaignServices.svc/CreateOEMCampaign",
+  createdImMarket: `${baseUrl}/CreateOEMCampaign`,
   // 更新
-  updateImMarket: "/CampaignServices.svc/UpdateOEMCampaign",
+  updateImMarket: `${baseUrl}/UpdateOEMCampaign`,
   // 详情
-  queryDetailImMarket: "/CampaignServices.svc/GetOEMCampaignInfo",
+  queryDetailImMarket: `${baseUrl}/GetOEMCampaignInfo`,
   // 结果
-  queryResultImMarket: "/CampaignServices.svc/GetOEMCampaignResult"
+  queryResultImMarket: `${baseUrl}/GetOEMCampaignResult`
 
 }
 
@@ -20,5 +21,8 @@ export default {
   },
   createdImMarket (data) {
     return Vue.axios.post(urlDict.createdImMarket, data)
+  },
+  queryDetailImMarket (OEMCampaignId) {
+    return Vue.axios.post(urlDict.queryDetailImMarket, {OEMCampaignId})
   }
 }

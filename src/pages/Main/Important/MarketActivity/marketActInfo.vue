@@ -25,11 +25,11 @@
       <div class="info" v-show="isSelect == 0">
         <div>
           <span>活动编号：</span>
-          <span class="code">00000001</span>
+          <span class="code">{{marketDetail.CampaignTypeCode}}</span>
         </div>
         <div>
           <span>活动主题：</span>
-          <span class="code">00000001</span>
+          <span class="code">{{marketDetail.CampaignName}}</span>
         </div>
         <div>
           <span>活动地点：</span>
@@ -37,11 +37,11 @@
         </div>
         <div>
           <span>开始日期：</span>
-          <span class="code">00000001</span>
+          <span class="code">{{marketDetail.StartDate}}</span>
         </div>
         <div>
           <span>结束日期：</span>
-          <span class="code">00000001</span>
+          <span class="code">{{marketDetail.EndDate}}</span>
         </div>
         <div>
           <span>一级来源渠道：</span>
@@ -126,7 +126,7 @@
         <div class="bottom_image"></div>
       </div>
       <div v-show="isSelect == 1" class="result">
-        <el-table :data="tableData" style="width: 100%">
+        <el-table :data="marketDetail" style="width: 100%">
           <el-table-column prop="name" label="编号" width="180"></el-table-column>
           <el-table-column prop="name" label="顾问名称" width="180"></el-table-column>
           <el-table-column  prop="name" label="时间"> </el-table-column>
@@ -136,17 +136,30 @@
   </div>
 </template>
 <script>
+import { ImportMarket } from "api"
 export default {
   data: () => ({
     isSelect: 0,
-    tableData: [
+    marketDetail: [
       { name: "哈哈哈哈" },
       { name: "哈哈哈哈" },
       { name: "哈哈哈哈" },
       { name: "哈哈哈哈" },
       { name: "哈哈哈哈" }
     ]
-  })
+  }),
+  created () {
+    this.queryDetailImMarket()
+  },
+  methods: {
+    async queryDetailImMarket () {
+      try {
+        this.marketDetail = await ImportMarket.queryDetailImMarket(this.$route.query.id)
+      } catch (err) {
+        console.log(err)
+      }
+    }
+  }
 }
 </script>
 

@@ -112,28 +112,35 @@ export default {
     }
   },
   watch: {
-    activeTime (n) {
-      this.ruleForm.StartDate = n[0]
-      this.ruleForm.EndDate = n[1]
+    "data.activeTime" (n) {
+      console.log(n)
+      this.data.ruleForm.StartDate = n[0]
+      this.data.ruleForm.EndDate = n[1]
     }
   },
   created () {
     this.CampaignTypeCodes = CampaignTypeCode
   },
   methods: {
-    created () {
+    async created () {
       let state = this.$store.state.Account.userInfo
       this.data.ruleForm.DeviceClassifyId = state.DeviceClassifyId
       this.data.ruleForm.DeviceBrandId = state.DeviceBrandId
       this.data.ruleForm.DeviceModelId = state.DeviceModelId
       this.data.ruleForm.EmployeeId = state.PCUserId
-      this.$refs["ruleForm"].validate(valid => {
-        if (valid) {
-          ImportMarket.createdImMarket(this.data.ruleForm).then(res => {
-            console.log(res)
-          })
+      try {
+        await this.$refs["ruleForm"].validate()
+        let res = await ImportMarket.createdImMarket(this.data.ruleForm)
+        console.log(res)
+        if (res.ErrorType) {
+          this.$message({message: "创建失败"})
+        } else {
+          this.$message({message: "创建成功", type: "success"})
+          this.$router.push("marketActivity")
         }
-      })
+      } catch (err) {
+        console.log(err)
+      }
     }
   }
 }

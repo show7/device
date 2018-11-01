@@ -22,14 +22,14 @@
       <el-table-column type="selection"  width="55"></el-table-column>
       <!-- <el-table-column  prop="date"  label="日期"   width="180" :filters="[{text: '2016-05-01', value: '2016-05-01'}, {text: '2016-05-02', value: '2016-05-02'}, {text: '2016-05-03', value: '2016-05-03'}, {text: '2016-05-04', value: '2016-05-04'}]" :filter-method="filterHandler"> -->
       <!-- </el-table-column> -->
-      <el-table-column  prop="name"  label="编号"> </el-table-column>
-      <el-table-column  prop="name"  label="活动主题"> </el-table-column>
-      <el-table-column  prop="name"  label="开始时间"> </el-table-column>
-      <el-table-column  prop="name"  label="结束时间"> </el-table-column>
-      <el-table-column  prop="name"  label="活动类别"> </el-table-column>
-      <el-table-column  prop="name"  label="主推车型"> </el-table-column>
-      <el-table-column  prop="name"  label="主机厂承担比例"> </el-table-column>
-      <el-table-column  prop="name"  label="活动状态"> </el-table-column>
+      <!-- <el-table-column  prop="name"  label="编号"> </el-table-column> -->
+      <el-table-column  prop="CampaignName"  label="活动主题"> </el-table-column>
+      <el-table-column  prop="StartDate"  label="开始时间"> </el-table-column>
+      <el-table-column  prop="EndDate"  label="结束时间"> </el-table-column>
+      <el-table-column  prop="CampaignTypeName"  label="活动类别"> </el-table-column>
+      <el-table-column  prop="DeviceModelName"  label="主推车型"> </el-table-column>
+      <el-table-column  prop="CostBearing"  label="主机厂承担比例"> </el-table-column>
+      <el-table-column  prop="CampaignStatusName"  label="活动状态"> </el-table-column>
       <el-table-column  prop="name"  label="参与经销商数"> </el-table-column>
       <el-table-column  prop="name"  label="参与顾问数"> </el-table-column>
       <el-table-column  prop="name"  label="参与客户数"> </el-table-column>
@@ -37,6 +37,8 @@
       <el-table-column  prop="name"  label="加热商机数"> </el-table-column>
       <el-table-column  prop="name"  label="下订单成交数"> </el-table-column>
       <el-table-column  prop="name"  label="发布时间"> </el-table-column>
+      <!-- DeviceClassifyName 设备分类名称 -->
+      <!-- DeviceBrandName 设备品牌名称 -->
   </el-table>
   </div>
 </template>
@@ -62,15 +64,18 @@ export default {
     this.queryImMarket()
   },
   methods: {
-    queryImMarket () {
+    async queryImMarket () {
       let state = this.$store.state.Account.userInfo
-      console.log(state)
-      ImportMarket.queryImMarket(state.DeviceBrandId, state.DeviceClassifyId, this.PageNumber).then(res => {
-        this.tableData = res.OEMCampaignList
-      })
+      try {
+        let { OEMCampaignList } = await ImportMarket.queryImMarket(state.DeviceBrandId, state.DeviceClassifyId, this.PageNumber)
+        this.tableData = OEMCampaignList
+        console.log(OEMCampaignList)
+      } catch (err) {
+        console.log(err)
+      }
     },
-    selectRow () {
-      this.$router.push("marketActInfo")
+    selectRow (e) {
+      this.$router.push({path: "marketActInfo", query: {id: e.OEMCampaignId}})
     }
   }
 }
