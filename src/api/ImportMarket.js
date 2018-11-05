@@ -11,7 +11,9 @@ const urlDict = {
   // 详情
   queryDetailImMarket: `${baseUrl}/GetOEMCampaignInfo`,
   // 结果
-  queryResultImMarket: `${baseUrl}/GetOEMCampaignResult`
+  queryResultImMarket: `${baseUrl}/GetOEMCampaignResult`,
+  // 市场活动接口经销商
+  tradeResult: `${baseUrl}/GetOEMCampaignDealerResult`
 
 }
 
@@ -24,5 +26,14 @@ export default {
   },
   queryDetailImMarket (OEMCampaignId) {
     return Vue.axios.post(urlDict.queryDetailImMarket, {OEMCampaignId})
+  },
+  queryResultImMarket (OEMCampaignId) {
+    return Vue.axios.post(urlDict.queryResultImMarket, {OEMCampaignId})
+  },
+  updateImMarket (data) {
+    return Vue.axios.post(urlDict.updateImMarket, data)
+  },
+  tradeResult (OEMCampaignId) {
+    return Vue.axios.post(urlDict.tradeResult, {OEMCampaignId})
   }
 }

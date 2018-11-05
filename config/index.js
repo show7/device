@@ -12,14 +12,14 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/JX': {
-          target: 'https://www.qunlss.com',
-          secure: false,
-          changeOrigin: true,
-          pathRewrite: {
-              '^/JX': '/JX'
-          }
+        target: 'https://www.qunlss.com',
+        secure: false,
+        changeOrigin: true,
+        pathRewrite: {
+          '^/JX': '/JX'
+        }
       }
-  },
+    },
 
     // Various Dev Server settings
     host: '127.0.0.1', // can be overwritten by process.env.HOST
@@ -53,12 +53,14 @@ module.exports = {
   },
 
   build: {
-    // Template for index.html
+    // html入口文件
     index: path.resolve(__dirname, '../dist/index.html'),
 
-    // Paths
+    // 产品文件的存放路径
     assetsRoot: path.resolve(__dirname, '../dist'),
-    assetsSubDirectory: 'static',
+    // 二级目录，存放静态资源文件的目录，位于dist文件夹下
+    assetsSubDirectory: 'dist',
+    // 设置之后构建的产品文件在注入到index.html中的时候就会带上这里的发布路径
     assetsPublicPath: './',
 
     /**

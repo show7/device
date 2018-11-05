@@ -29,7 +29,8 @@ module.exports = {
     "args": "none",
     "camelcase":0,
     "eqeqeq":0,
-    "quotes": ["error", "double"]
+    "quotes": ["error", "double"],
+    "no-implicit-coercion": 0
   },
   globals: {
     storage: false

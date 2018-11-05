@@ -14,7 +14,6 @@
     width > maxWidth && (width = maxWidth)
     let rem = width * 100 / designWidth
     remStyle.innerHTML = "html{font-size:" + rem + "px;}"
-    console.log(rem)
   }
   if (docEl.firstElementChild) {
     docEl.firstElementChild.appendChild(remStyle)
